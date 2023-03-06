@@ -1,0 +1,21 @@
+body{
+    height: 100vh;
+}
+
+
+
+.padre{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: antiquewhite;
+}
+
+.padre div:nth-child(2){
+    text-align: center;
+    background-color: burlywood;
+    width: 15%;
+}
