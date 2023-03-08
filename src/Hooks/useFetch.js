@@ -16,7 +16,6 @@ export const useFetch = (url) => {
 
         const sol = await fetch(url);
         const data = await sol.json();
-
         setState({
             data,
             isLoading: false,

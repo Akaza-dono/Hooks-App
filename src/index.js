@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { MultipleCustomHokks } from './Examples/MultipleCustomHokks';
+// import { MultipleCustomHokks } from './Examples/MultipleCustomHokks';
+import { Layout } from './UseLayoutEffect/Layout';
 //import { FormWithCustomHook } from './UseEffect/FormWithcustomHook';
 //import { SimpleForm } from './UseEffect/SimpleForm';
 // import { HooksApp } from './HooksApp';
@@ -10,5 +11,6 @@ import { MultipleCustomHokks } from './Examples/MultipleCustomHokks';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <MultipleCustomHokks/>
+    <Layout/>
+    // <FocusScreen/>
 );

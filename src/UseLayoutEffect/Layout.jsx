@@ -1,16 +1,14 @@
 import { useCounter, useFetch } from "../Hooks";
-import { CharactersEpisode } from "./CharactersEpisode";
-import { LoadingQuote } from "./LoadingQuote";
-import { Quotes } from "./Quotes";
 import "../Estilos/style.css";
+import { LoadingQuote } from "../Examples/LoadingQuote";
+import { Quotes } from "../Examples/Quotes";
 
-export const MultipleCustomHokks = () => {
+export const Layout = () => {
   const { counter, increment } = useCounter(1);
   const { data, isLoading } = useFetch(
     `https://rickandmortyapi.com/api/episode/${counter}`
   );
-  let idCharacter = 0;
-  const { name, url, characters, id, episode } = !!data && data;
+  const { name, url } = !!data && data;
   return (
     <>
       <h1>BreakingBad Quotes</h1>
@@ -23,14 +21,6 @@ export const MultipleCustomHokks = () => {
         Next Quote
       </button>
       {isLoading ? <LoadingQuote /> : <Quotes name={name} url={url} />}
-      {
-        <div className="character">
-          {characters 
-            ? characters.map(e => (<CharactersEpisode key={idCharacter++} uri={e} />)) 
-            : (<LoadingQuote />)}
-        </div>
-      }
-
     </>
   );
 };

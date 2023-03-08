@@ -1,5 +1,6 @@
 body{
     height: 100vh;
+    padding: 10px;
 }
 
 
@@ -18,4 +19,16 @@ body{
     text-align: center;
     background-color: burlywood;
     width: 15%;
+}
+
+.character{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.CardCharacter{
+    text-align: center;
+    background-color: burlywood;
+    border-radius: 10px;
 }
