@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { useForm } from "../Hooks/useForm";
 import { Message } from "./Message";
 
@@ -9,7 +8,7 @@ export const FormWithCustomHook = () => {
     password: "",
   };
 
-  const { formState, onInputChange, username, password, email, onResetForm } = useForm(myObj);
+  const { onInputChange, username, password, email, onResetForm } = useForm(myObj);
 
   // const { username, email, password } = formState;
 
@@ -23,7 +22,7 @@ export const FormWithCustomHook = () => {
       <hr />
       <input
         type="text"
-        className="form-control"
+        className="form-control" 
         placeholder="username"
         name="username"
         value={username}

@@ -10,7 +10,7 @@ export const MultipleCustomHokks = () => {
     `https://rickandmortyapi.com/api/episode/${counter}`
   );
   let idCharacter = 0;
-  const { name, url, characters, id, episode } = !!data && data;
+  const { name, url, characters } = !!data && data;
   return (
     <>
       <h1>BreakingBad Quotes</h1>

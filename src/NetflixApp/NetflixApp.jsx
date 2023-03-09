@@ -3,7 +3,6 @@ import MovieBanner from '../MovieBanner/MovieBanner';
 const NetflixApp = () => {
   const [myObject, setMyObject] = useState({});
   const [movie,setMovie] = useState('mega');
-  const [isData,setIsData] = useState(false);
 
   useEffect(() => {
     const getData = async () => {
