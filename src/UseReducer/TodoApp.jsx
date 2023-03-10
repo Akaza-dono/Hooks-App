@@ -1,47 +1,37 @@
-import { useReducer } from "react";
+import { useTodo } from "../Hooks/useTodo";
 import { AddToDo } from "./AddToDo";
 import { TodoList } from "./TodoList";
-import { todoReducer } from "./todoReducer";
 
-export const TodoApp = () => {
-    let id = 0;
-    const initialState = [
-        {
-            id: id++,
-            description: "Recolectar la piedra del alma",
-            done: false,
-        },
-        {
-            id: id++,
-            description: "Recolectar la piedra del tiempo",
-            done: false,
-        },
-    ];
+export const TodoApp = () => {  
+  const {handleDeleteTodo,onToggleTodo,handleNewToDo,todos, pendingCount, toDosCount} = useTodo();
 
-    const handleNewToDo = (description) => {
-        console.log(description)
-    }
+  return (
+    <>
+      <h1>
+        Todo App: {toDosCount()} <small>Pendientes: {pendingCount()}</small>
+      </h1>
+      <hr />
 
-    const [todos, dispatch] = useReducer(todoReducer, initialState);
+      <div className="row">
+        <div className="col-7">
+          {todos.map((e) => (
+            <TodoList
+              key={e.id}
+              item={e.description}
+              deleteTodo={handleDeleteTodo}
+              id={e.id}
+              onToggleTodo={onToggleTodo}
+              done={e.done}
+            />
+          ))}
+        </div>
 
-    return (
-        <>
-            <h1>Todo App: 10 <small>Pendientes: 2</small></h1>
-            <hr />
-
-            <div className="row">
-                <div className="col-7">
-                    {initialState.map(e => (
-                        <TodoList key={e.id} item={e.description}/>
-                    ))}
-                </div>
-
-                <div className="col-5">
-                    <h4>Agregar TODO</h4>
-                    <hr />
-                        <AddToDo addTodo={handleNewToDo}/>
-                </div>
-            </div>
-        </>
-    );
+        <div className="col-5">
+          <h4>Agregar TODO</h4>
+          <hr />
+          <AddToDo addTodo={handleNewToDo} />
+        </div>
+      </div>
+    </>
+  );
 };

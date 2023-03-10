@@ -25,5 +25,3 @@ const addTodoAction = {
     type: '[TODO] add todo', 
     payload: newTodo
 }
-
-console.log(todoReducer(todos, addTodoAction))

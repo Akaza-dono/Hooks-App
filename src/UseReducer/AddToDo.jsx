@@ -1,15 +1,14 @@
 import { useState } from "react"
-
+let idTodo = 3;
 export const AddToDo = ({ addTodo }) => {
-
     const [description, setDescription] = useState("")
-    let idTodo = 0;
     const sendNewTodo = () => {
         addTodo({
-            id: idTodo++,
+            id: idTodo,
             description: description,
             done: false
         });
+        idTodo++
     }
     const setDescriptionData = ({ target: { value } }) => {
         setDescription(value);
