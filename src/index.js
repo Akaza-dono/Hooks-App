@@ -1,3 +1,5 @@
+
+import { BrowserRouter, createBrowserRouter, RouterProvider } from "react-router-dom";
 // import React from 'react';
 import ReactDOM from 'react-dom/client';
 // import { Padre } from './07-tarea-memo/Padre';
@@ -12,11 +14,14 @@ import ReactDOM from 'react-dom/client';
 // import { CounterApp } from './UseState/CounterApp';
 // import { CounterWithCustomHook } from './UseState/CounterWithCustomHook';
 import '../src/UseReducer/intro-reducer';
-import { TodoApp } from './UseReducer/TodoApp';
+import { MainApp } from './UseContext/MainApp';
+import './Estilos/style.css'
+//import { TodoApp } from './UseReducer/TodoApp';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    //<Padre/>
-    // <FocusScreen/>
-    <TodoApp/>
+    <BrowserRouter>
+        <MainApp />
+    </BrowserRouter>
+
 );
